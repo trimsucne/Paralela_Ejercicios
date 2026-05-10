@@ -179,9 +179,9 @@ public final class ReciprocalArraySum {
     protected static double parManyTaskArraySum(final double[] input,
             final int numTasks) {
         double sum = 0;
-        ForkJoinPool pool = new ForkJoinPool(numTasks);
-        ReciprocalArraySumTask[] tasks = new ReciprocalArraySumTask[numTasks];
         int numForkTasks = numTasks - 1;
+        ForkJoinPool pool = new ForkJoinPool(numForkTasks);
+        ReciprocalArraySumTask[] tasks = new ReciprocalArraySumTask[numTasks];
 
         for (int i = 0; i < numForkTasks; i++) {
             tasks[i] = new ReciprocalArraySumTask(getChunkStartInclusive(i, numTasks, input.length),
