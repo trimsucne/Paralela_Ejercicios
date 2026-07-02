@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="co.edu.unal.paralela.ReciprocalArraySumTest" time="59.369" tests="4" errors="0" skipped="0" failures="3">
+<testsuite name="co.edu.unal.paralela.ReciprocalArraySumTest" time="48.588" tests="4" errors="0" skipped="0" failures="3">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="21.0.9+7-LTS-338"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:\Users\secoe\Documents\Projects\Paralela\Paralela_Ejer1\ejercicio_1"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\secoe\OneDrive\Documentos\University\SEM 7, 2026-I\Computación Paralela y Distribuida\Sustentaciones\ejercicio_1"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="CO"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\secoe\Documents\Projects\Paralela\Paralela_Ejer1\ejercicio_1"/>
+    <property name="user.dir" value="C:\Users\secoe\OneDrive\Documentos\University\SEM 7, 2026-I\Computación Paralela y Distribuida\Sustentaciones\ejercicio_1"/>
     <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="java.runtime.version" value="21.0.9+7-LTS-338"/>
     <property name="os.arch" value="amd64"/>
@@ -60,26 +60,26 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testParSimpleTwoHundredMillion" classname="co.edu.unal.paralela.ReciprocalArraySumTest" time="32.348"/>
-  <testcase name="testParManyTaskTwoHundredMillion" classname="co.edu.unal.paralela.ReciprocalArraySumTest" time="26.265">
-    <failure message="Se esperaba que la implmentación de muchas tareas en paralelo pudiera ejecutarse  6,400000x veces más rápido, pero solo alcanzo a mejorar la rapidez (speedup) 2,551402x veces" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Se esperaba que la implmentación de muchas tareas en paralelo pudiera ejecutarse  6,400000x veces más rápido, pero solo alcanzo a mejorar la rapidez (speedup) 2,551402x veces
+  <testcase name="testParSimpleTwoHundredMillion" classname="co.edu.unal.paralela.ReciprocalArraySumTest" time="26.166"/>
+  <testcase name="testParManyTaskTwoHundredMillion" classname="co.edu.unal.paralela.ReciprocalArraySumTest" time="21.798">
+    <failure message="Se esperaba que la implmentación de muchas tareas en paralelo pudiera ejecutarse  6,400000x veces más rápido, pero solo alcanzo a mejorar la rapidez (speedup) 2,901235x veces" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Se esperaba que la implmentación de muchas tareas en paralelo pudiera ejecutarse  6,400000x veces más rápido, pero solo alcanzo a mejorar la rapidez (speedup) 2,901235x veces
 	at junit.framework.Assert.fail(Assert.java:47)
 	at junit.framework.Assert.assertTrue(Assert.java:20)
 	at co.edu.unal.paralela.ReciprocalArraySumTest.testParManyTaskTwoHundredMillion(ReciprocalArraySumTest.java:149)
 </failure>
   </testcase>
-  <testcase name="testParSimpleTwoMillion" classname="co.edu.unal.paralela.ReciprocalArraySumTest" time="0.433">
+  <testcase name="testParManyTaskTwoMillion" classname="co.edu.unal.paralela.ReciprocalArraySumTest" time="0.321">
+    <failure message="Se esperaba que la implmentación de muchas tareas en paralelo pudiera ejecutarse 4,800000x veces más rápido, pero solo alcanzo a mejorar la rapidez (speedup) 1,000000x veces" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Se esperaba que la implmentación de muchas tareas en paralelo pudiera ejecutarse 4,800000x veces más rápido, pero solo alcanzo a mejorar la rapidez (speedup) 1,000000x veces
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at co.edu.unal.paralela.ReciprocalArraySumTest.testParManyTaskTwoMillion(ReciprocalArraySumTest.java:137)
+</failure>
+  </testcase>
+  <testcase name="testParSimpleTwoMillion" classname="co.edu.unal.paralela.ReciprocalArraySumTest" time="0.303">
     <failure message="Se esperaba que la implementación de dos tareas en paralelo pudiera ejecutarse  1,500000x veces más rápido, pero solo alcanzo a mejorar la rapidez (speedup) 1,000000x veces" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Se esperaba que la implementación de dos tareas en paralelo pudiera ejecutarse  1,500000x veces más rápido, pero solo alcanzo a mejorar la rapidez (speedup) 1,000000x veces
 	at junit.framework.Assert.fail(Assert.java:47)
 	at junit.framework.Assert.assertTrue(Assert.java:20)
 	at co.edu.unal.paralela.ReciprocalArraySumTest.testParSimpleTwoMillion(ReciprocalArraySumTest.java:114)
-</failure>
-  </testcase>
-  <testcase name="testParManyTaskTwoMillion" classname="co.edu.unal.paralela.ReciprocalArraySumTest" time="0.323">
-    <failure message="Se esperaba que la implmentación de muchas tareas en paralelo pudiera ejecutarse 4,800000x veces más rápido, pero solo alcanzo a mejorar la rapidez (speedup) 2,000000x veces" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Se esperaba que la implmentación de muchas tareas en paralelo pudiera ejecutarse 4,800000x veces más rápido, pero solo alcanzo a mejorar la rapidez (speedup) 2,000000x veces
-	at junit.framework.Assert.fail(Assert.java:47)
-	at junit.framework.Assert.assertTrue(Assert.java:20)
-	at co.edu.unal.paralela.ReciprocalArraySumTest.testParManyTaskTwoMillion(ReciprocalArraySumTest.java:137)
 </failure>
   </testcase>
 </testsuite>
