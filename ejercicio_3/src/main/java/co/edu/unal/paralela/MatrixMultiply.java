@@ -1,11 +1,17 @@
 package co.edu.unal.paralela;
 
+import static edu.rice.pcdp.PCDP.forall;
+import static edu.rice.pcdp.PCDP.forall2d;
+import static edu.rice.pcdp.PCDP.forallChunked;
 import static edu.rice.pcdp.PCDP.forseq2d;
 
 /**
  * Clase envolvente pata implementar de forma eficiente la multiplicación dde matrices en paralelo.
  */
 public final class MatrixMultiply {
+
+    final static int chunksNumber = Runtime.getRuntime().availableProcessors() * 4;
+
     /**
      * Constructor por omisión.
      */
@@ -43,10 +49,13 @@ public final class MatrixMultiply {
         /*
          * PARA HACER: paralelizar el ciclo externo para mejorar el desempeño.
          */
-        forseq2d(0, N - 1, 0, N - 1, (i, j) -> {
-            C[i][j] = 0.0;
-            for (int k = 0; k < N; k++) {
-                C[i][j] += A[i][k] * B[k][j];
+        forallChunked(0, N - 1, chunksNumber, i -> {
+            for (int j = 0; j < N; j++) {
+                double sum = 0.0;
+                for (int k = 0; k < N; k++) {
+                    sum += A[i][k] * B[k][j];
+                }
+                C[i][j] = sum;
             }
         });
     }
