@@ -1,7 +1,5 @@
 package co.edu.unal.paralela;
 
-import static edu.rice.pcdp.PCDP.forall;
-import static edu.rice.pcdp.PCDP.forall2d;
 import static edu.rice.pcdp.PCDP.forallChunked;
 import static edu.rice.pcdp.PCDP.forseq2d;
 
@@ -49,7 +47,7 @@ public final class MatrixMultiply {
         /*
          * PARA HACER: paralelizar el ciclo externo para mejorar el desempeño.
          */
-        forallChunked(0, N - 1, chunksNumber, i -> {
+        forallChunked(0, N - 1, N/chunksNumber, i -> {
             for (int j = 0; j < N; j++) {
                 double sum = 0.0;
                 for (int k = 0; k < N; k++) {

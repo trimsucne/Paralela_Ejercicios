@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="co.edu.unal.paralela.MatrixMultiplyTest" time="56.346" tests="2" errors="0" skipped="0" failures="0">
+<testsuite name="co.edu.unal.paralela.MatrixMultiplyTest" time="27.236" tests="2" errors="0" skipped="0" failures="2">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="21.0.9+7-LTS-338"/>
@@ -60,6 +60,18 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testPar512_x_512" classname="co.edu.unal.paralela.MatrixMultiplyTest" time="10.176"/>
-  <testcase name="testPar768_x_768" classname="co.edu.unal.paralela.MatrixMultiplyTest" time="46.17"/>
+  <testcase name="testPar512_x_512" classname="co.edu.unal.paralela.MatrixMultiplyTest" time="5.457">
+    <failure message="It was expected that the parallel implementation would run at least 4,800000x faster, but it only achieved 4,750000x speedup" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: It was expected that the parallel implementation would run at least 4,800000x faster, but it only achieved 4,750000x speedup
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at co.edu.unal.paralela.MatrixMultiplyTest.testPar512_x_512(MatrixMultiplyTest.java:116)
+</failure>
+  </testcase>
+  <testcase name="testPar768_x_768" classname="co.edu.unal.paralela.MatrixMultiplyTest" time="21.779">
+    <failure message="It was expected that the parallel implementation would run at least 4,800000x faster, but it only achieved 2,924242x speedup" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: It was expected that the parallel implementation would run at least 4,800000x faster, but it only achieved 2,924242x speedup
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at co.edu.unal.paralela.MatrixMultiplyTest.testPar768_x_768(MatrixMultiplyTest.java:128)
+</failure>
+  </testcase>
 </testsuite>
