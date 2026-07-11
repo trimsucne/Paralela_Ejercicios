@@ -35,25 +35,27 @@ public final class MatrixMultiply {
     }
 
     /**
-     * Realiza una multiplicación de matrices bidimensionales (A x B = C) de forma paralela.
-     *
      * @param A Una matriz de entrada con dimensiones NxN
      * @param B Una matriz de entrada con dimensiones NxN
      * @param C Matriz de salida
-     * @param N amaño de las matrices de entrada
+     * @param N Tamaño de las matrices de entrada
      */
     public static void parMatrixMultiply(final double[][] A, final double[][] B,
             final double[][] C, final int N) {
-        /*
-         * PARA HACER: paralelizar el ciclo externo para mejorar el desempeño.
-         */
-        forallChunked(0, N - 1, N/chunksNumber, i -> {
+        
+        // El tamaño de bloque (chunk size) para la distribución de hilos
+        final int chunkSize = Math.max(1, N / chunksNumber);
+
+        forallChunked(0, N - 1, chunkSize, i -> {
             for (int j = 0; j < N; j++) {
-                double sum = 0.0;
-                for (int k = 0; k < N; k++) {
-                    sum += A[i][k] * B[k][j];
+                C[i][j] = 0.0;
+            }
+            
+            for (int k = 0; k < N; k++) {
+                double aValue = A[i][k];
+                for (int j = 0; j < N; j++) {
+                    C[i][j] += aValue * B[k][j];
                 }
-                C[i][j] = sum;
             }
         });
     }
